@@ -68,4 +68,26 @@ class ProduitController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+
+    /**
+     * @Route("/produit/edit/{id}", name="produitEdit")
+     */
+    public function update($id, Request $request)
+    {
+        $produit = new Produit();
+        $produit = $this->getDoctrine()->getRepository(Produit::class)->find($id);
+        $form = $this->createForm(ProduitType::class, $produit);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $produit = $form->getData();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($produit);
+            $entityManager->flush();
+            return $this->redirectToRoute('produitList');
+        }
+        return $this->render('produit/ajout.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
 }
