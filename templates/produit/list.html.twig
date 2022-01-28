@@ -1,17 +1,25 @@
 {% extends 'base.html.twig' %}
     {% block body %}
-        <table>
-        <th>name</th>
-         th>price</th>
-         <th>description</th>
-         <tbody>
-          {% for produit in products %}
-          <tr>
-          <td>{{produit.nom}}</td>
-          <td>{{produit.prix}}</td>
-          <td>{{produit.description}}</td>
-          </tr>
-          {% endfor %}
-         </tbody>
-        </table>
+    <br></br>
+      <div style="text-align: center;">
+            <table border=1 style="width:90%">
+            <th><p>name</p></th>
+             <th><p>price</p></th>
+             <th><p>description</p></th>
+               <th><p>action</p></th>
+             <tbody>
+              {% for produit in products %}
+              <tr>
+              <td>{{produit.nom}}</td>
+              <td>{{produit.prix}}</td>
+              <td>{{produit.description}}</td>
+               <td>
+              <a class="btn btn-outline-success" href="{{path("produitEdit",{'id':produit.id})}}"> modifier  </a>
+              <a class="btn btn-outline-danger" href="{{path("produitDelete",{'id':produit.id})}}"> supprimer  </a>
+               </td>
+              </tr>
+              {% endfor %}
+             </tbody>
+            </table>
+      </div>
         {% endblock  %}
