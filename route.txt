@@ -13,7 +13,11 @@
   _profiler_exception        ANY      ANY      ANY    /_profiler/{token}/exception       
   _profiler_exception_css    ANY      ANY      ANY    /_profiler/{token}/exception.css   
   produit                    ANY      ANY      ANY    /produit                           
-  produitAdd                 POST     ANY      ANY    /produit/add                       
+  produitAdd                 ANY      ANY      ANY    /produit/add                       
+  produitList                ANY      ANY      ANY    /produit/list                      
+  produitAjout               ANY      ANY      ANY    /produit/ajout                     
+  produitEdit                ANY      ANY      ANY    /produit/edit/{id}                 
+  produitDelete              ANY      ANY      ANY    /produit/delete/{id}               
   test                       ANY      ANY      ANY    /test                              
   _preview_error             ANY      ANY      ANY    /_error/{code}.{_format}           
  -------------------------- -------- -------- ------ ----------------------------------- 

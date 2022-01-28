@@ -90,4 +90,17 @@ class ProduitController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/produit/delete/{id}", name="produitDelete")
+     */
+    public function destroy($id)
+    {
+        $produit = new Produit();
+        $entityManager = $this->getDoctrine()->getManager();
+        $produit = $entityManager->getRepository(Produit::class)->find($id);
+        $entityManager->remove($produit);
+        $entityManager->flush();
+        return $this->redirectToRoute('produitList');
+    }
 }
