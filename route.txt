@@ -12,6 +12,13 @@
   _profiler_router           ANY      ANY      ANY    /_profiler/{token}/router          
   _profiler_exception        ANY      ANY      ANY    /_profiler/{token}/exception       
   _profiler_exception_css    ANY      ANY      ANY    /_profiler/{token}/exception.css   
+  app_login                  ANY      ANY      ANY    /login                             
+  app_logout                 ANY      ANY      ANY    /logout                            
+  user_registration          ANY      ANY      ANY    /register                          
+  getAllUsers                ANY      ANY      ANY    /users                             
+  index                      ANY      ANY      ANY    /index                             
+  login                      ANY      ANY      ANY    /login                             
+  register                   ANY      ANY      ANY    /register                          
   produit                    ANY      ANY      ANY    /produit                           
   produitAdd                 ANY      ANY      ANY    /produit/add                       
   produitList                ANY      ANY      ANY    /produit/list                      
